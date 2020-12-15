@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Client" msprop:Generator_TableClassName="ClientDataTable" msprop:Generator_TableVarName="tableClient" msprop:Generator_RowChangedName="ClientRowChanged" msprop:Generator_TablePropName="Client" msprop:Generator_RowDeletingName="ClientRowDeleting" msprop:Generator_RowChangingName="ClientRowChanging" msprop:Generator_RowEvHandlerName="ClientRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientRowDeleted" msprop:Generator_RowClassName="ClientRow" msprop:Generator_UserTableName="Client" msprop:Generator_RowEvArgName="ClientRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" type="xs:string" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="MiddleName" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_UserColumnName="MiddleName" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TypeService" msprop:Generator_TableClassName="TypeServiceDataTable" msprop:Generator_TableVarName="tableTypeService" msprop:Generator_TablePropName="TypeService" msprop:Generator_RowDeletingName="TypeServiceRowDeleting" msprop:Generator_RowChangingName="TypeServiceRowChanging" msprop:Generator_RowEvHandlerName="TypeServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="TypeServiceRowDeleted" msprop:Generator_UserTableName="TypeService" msprop:Generator_RowChangedName="TypeServiceRowChanged" msprop:Generator_RowEvArgName="TypeServiceRowChangeEvent" msprop:Generator_RowClassName="TypeServiceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Service" msprop:Generator_TableClassName="ServiceDataTable" msprop:Generator_TableVarName="tableService" msprop:Generator_TablePropName="Service" msprop:Generator_RowDeletingName="ServiceRowDeleting" msprop:Generator_RowChangingName="ServiceRowChanging" msprop:Generator_RowEvHandlerName="ServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="ServiceRowDeleted" msprop:Generator_UserTableName="Service" msprop:Generator_RowChangedName="ServiceRowChanged" msprop:Generator_RowEvArgName="ServiceRowChangeEvent" msprop:Generator_RowClassName="ServiceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="CarId" msprop:Generator_ColumnVarNameInTable="columnCarId" msprop:Generator_ColumnPropNameInRow="CarId" msprop:Generator_ColumnPropNameInTable="CarIdColumn" msprop:Generator_UserColumnName="CarId" type="xs:long" minOccurs="0" />
+              <xs:element name="WorkerId" msprop:Generator_ColumnVarNameInTable="columnWorkerId" msprop:Generator_ColumnPropNameInRow="WorkerId" msprop:Generator_ColumnPropNameInTable="WorkerIdColumn" msprop:Generator_UserColumnName="WorkerId" type="xs:long" minOccurs="0" />
+              <xs:element name="TypeId" msprop:Generator_ColumnVarNameInTable="columnTypeId" msprop:Generator_ColumnPropNameInRow="TypeId" msprop:Generator_ColumnPropNameInTable="TypeIdColumn" msprop:Generator_UserColumnName="TypeId" type="xs:long" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Model" msprop:Generator_TableClassName="ModelDataTable" msprop:Generator_TableVarName="tableModel" msprop:Generator_TablePropName="Model" msprop:Generator_RowDeletingName="ModelRowDeleting" msprop:Generator_RowChangingName="ModelRowChanging" msprop:Generator_RowEvHandlerName="ModelRowChangeEventHandler" msprop:Generator_RowDeletedName="ModelRowDeleted" msprop:Generator_UserTableName="Model" msprop:Generator_RowChangedName="ModelRowChanged" msprop:Generator_RowEvArgName="ModelRowChangeEvent" msprop:Generator_RowClassName="ModelRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+              <xs:element name="BrandId" msprop:Generator_ColumnVarNameInTable="columnBrandId" msprop:Generator_ColumnPropNameInRow="BrandId" msprop:Generator_ColumnPropNameInTable="BrandIdColumn" msprop:Generator_UserColumnName="BrandId" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Worker" msprop:Generator_TableClassName="WorkerDataTable" msprop:Generator_TableVarName="tableWorker" msprop:Generator_TablePropName="Worker" msprop:Generator_RowDeletingName="WorkerRowDeleting" msprop:Generator_RowChangingName="WorkerRowChanging" msprop:Generator_RowEvHandlerName="WorkerRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkerRowDeleted" msprop:Generator_UserTableName="Worker" msprop:Generator_RowChangedName="WorkerRowChanged" msprop:Generator_RowEvArgName="WorkerRowChangeEvent" msprop:Generator_RowClassName="WorkerRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" type="xs:string" />
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" type="xs:string" minOccurs="0" />
+              <xs:element name="MiddleName" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_UserColumnName="MiddleName" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Brand" msprop:Generator_TableClassName="BrandDataTable" msprop:Generator_TableVarName="tableBrand" msprop:Generator_TablePropName="Brand" msprop:Generator_RowDeletingName="BrandRowDeleting" msprop:Generator_RowChangingName="BrandRowChanging" msprop:Generator_RowEvHandlerName="BrandRowChangeEventHandler" msprop:Generator_RowDeletedName="BrandRowDeleted" msprop:Generator_UserTableName="Brand" msprop:Generator_RowChangedName="BrandRowChanged" msprop:Generator_RowEvArgName="BrandRowChangeEvent" msprop:Generator_RowClassName="BrandRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Car" msprop:Generator_TableClassName="CarDataTable" msprop:Generator_TableVarName="tableCar" msprop:Generator_TablePropName="Car" msprop:Generator_RowDeletingName="CarRowDeleting" msprop:Generator_RowChangingName="CarRowChanging" msprop:Generator_RowEvHandlerName="CarRowChangeEventHandler" msprop:Generator_RowDeletedName="CarRowDeleted" msprop:Generator_UserTableName="Car" msprop:Generator_RowChangedName="CarRowChanged" msprop:Generator_RowEvArgName="CarRowChangeEvent" msprop:Generator_RowClassName="CarRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+              <xs:element name="ClientId" msprop:Generator_ColumnVarNameInTable="columnClientId" msprop:Generator_ColumnPropNameInRow="ClientId" msprop:Generator_ColumnPropNameInTable="ClientIdColumn" msprop:Generator_UserColumnName="ClientId" type="xs:long" minOccurs="0" />
+              <xs:element name="ModelId" msprop:Generator_ColumnVarNameInTable="columnModelId" msprop:Generator_ColumnPropNameInRow="ModelId" msprop:Generator_ColumnPropNameInTable="ModelIdColumn" msprop:Generator_UserColumnName="ModelId" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Client" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="TypeService_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TypeService" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Service_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Service" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Model_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Model" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Worker_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Worker" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Brand_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Brand" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="Car_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Car" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:keyref name="FK_Model_Car" refer="Model_Constraint1" msprop:rel_Generator_UserChildTable="Car" msprop:rel_Generator_ChildPropName="GetCarRows" msprop:rel_Generator_UserRelationName="FK_Model_Car" msprop:rel_Generator_ParentPropName="ModelRow" msprop:rel_Generator_RelationVarName="relationFK_Model_Car" msprop:rel_Generator_UserParentTable="Model">
+      <xs:selector xpath=".//mstns:Car" />
+      <xs:field xpath="mstns:ModelId" />
+    </xs:keyref>
+    <xs:keyref name="Client_Car" refer="Constraint1" msprop:rel_Generator_UserChildTable="Car" msprop:rel_Generator_ChildPropName="GetCarRows" msprop:rel_Generator_UserRelationName="Client_Car" msprop:rel_Generator_ParentPropName="ClientRow" msprop:rel_Generator_RelationVarName="relationClient_Car" msprop:rel_Generator_UserParentTable="Client">
+      <xs:selector xpath=".//mstns:Car" />
+      <xs:field xpath="mstns:ClientId" />
+    </xs:keyref>
+    <xs:keyref name="FK_Brand_Model" refer="Brand_Constraint1" msprop:rel_Generator_UserChildTable="Model" msprop:rel_Generator_ChildPropName="GetModelRows" msprop:rel_Generator_UserRelationName="FK_Brand_Model" msprop:rel_Generator_RelationVarName="relationFK_Brand_Model" msprop:rel_Generator_UserParentTable="Brand" msprop:rel_Generator_ParentPropName="BrandRow">
+      <xs:selector xpath=".//mstns:Model" />
+      <xs:field xpath="mstns:BrandId" />
+    </xs:keyref>
+    <xs:keyref name="FK_TypeService_Service" refer="TypeService_Constraint1" msprop:rel_Generator_UserChildTable="Service" msprop:rel_Generator_ChildPropName="GetServiceRows" msprop:rel_Generator_UserRelationName="FK_TypeService_Service" msprop:rel_Generator_ParentPropName="TypeServiceRow" msprop:rel_Generator_RelationVarName="relationFK_TypeService_Service" msprop:rel_Generator_UserParentTable="TypeService">
+      <xs:selector xpath=".//mstns:Service" />
+      <xs:field xpath="mstns:TypeId" />
+    </xs:keyref>
+    <xs:keyref name="FK_Worker_Service" refer="Worker_Constraint1" msprop:rel_Generator_UserChildTable="Service" msprop:rel_Generator_ChildPropName="GetServiceRows" msprop:rel_Generator_UserRelationName="FK_Worker_Service" msprop:rel_Generator_RelationVarName="relationFK_Worker_Service" msprop:rel_Generator_UserParentTable="Worker" msprop:rel_Generator_ParentPropName="WorkerRow">
+      <xs:selector xpath=".//mstns:Service" />
+      <xs:field xpath="mstns:WorkerId" />
+    </xs:keyref>
+    <xs:keyref name="FK_Car_Service" refer="Car_Constraint1" msprop:rel_Generator_UserChildTable="Service" msprop:rel_Generator_ChildPropName="GetServiceRows" msprop:rel_Generator_UserRelationName="FK_Car_Service" msprop:rel_Generator_RelationVarName="relationFK_Car_Service" msprop:rel_Generator_UserParentTable="Car" msprop:rel_Generator_ParentPropName="CarRow">
+      <xs:selector xpath=".//mstns:Service" />
+      <xs:field xpath="mstns:CarId" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>
