@@ -18,12 +18,13 @@ namespace lab1
         {
             foreach (string column in columns)
             {
-                target.Add(new SqlParameter
+                target.Add(new MySqlParameter
                 {
                     SourceColumn = column,
                     ParameterName = '@' + column
                 });
             }
+            
         }
 
 
@@ -38,7 +39,7 @@ namespace lab1
 
             adapter.Fill(ds, TableName);
             Console.WriteLine("\nRead " + TableName);
-            //Helper.PrintDataSet(ds, tableName());
+            Helper.PrintDataSet(ds, TableName);
         }
 
 
@@ -76,7 +77,7 @@ namespace lab1
             MySqlCommandBuilder mySqlCommandBuilder = new MySqlCommandBuilder(adapter);
             adapter.Update(ds, TableName);
             Console.WriteLine("\nUpdate " + TableName);
-            //Helper.PrintDataSet(ds, TableName);
+            Helper.PrintDataSet(ds, TableName);
         }
     }
 }

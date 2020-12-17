@@ -4,7 +4,7 @@
     {
         public TypeAccessor()
         {
-            tableName = "Type";
+            tableName = "TypeService";
             columnNames = new[] {"Name"};
         }
     }

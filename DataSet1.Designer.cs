@@ -38,17 +38,17 @@ namespace lab1 {
         
         private CarDataTable tableCar;
         
-        private global::System.Data.DataRelation relationFK_TypeService_Service;
-        
-        private global::System.Data.DataRelation relationFK_Worker_Service;
+        private global::System.Data.DataRelation relationClient_Car;
         
         private global::System.Data.DataRelation relationFK_Car_Service;
         
-        private global::System.Data.DataRelation relationFK_Brand_Model;
-        
         private global::System.Data.DataRelation relationFK_Model_Car;
         
-        private global::System.Data.DataRelation relationClient_Car;
+        private global::System.Data.DataRelation relationFK_Brand_Model;
+        
+        private global::System.Data.DataRelation relationFK_Worker_Service;
+        
+        private global::System.Data.DataRelation relationFK_TypeService_Service;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -350,12 +350,12 @@ namespace lab1 {
                     this.tableCar.InitVars();
                 }
             }
-            this.relationFK_TypeService_Service = this.Relations["FK_TypeService_Service"];
-            this.relationFK_Worker_Service = this.Relations["FK_Worker_Service"];
-            this.relationFK_Car_Service = this.Relations["FK_Car_Service"];
-            this.relationFK_Brand_Model = this.Relations["FK_Brand_Model"];
-            this.relationFK_Model_Car = this.Relations["FK_Model_Car"];
             this.relationClient_Car = this.Relations["Client_Car"];
+            this.relationFK_Car_Service = this.Relations["FK_Car_Service"];
+            this.relationFK_Model_Car = this.Relations["FK_Model_Car"];
+            this.relationFK_Brand_Model = this.Relations["FK_Brand_Model"];
+            this.relationFK_Worker_Service = this.Relations["FK_Worker_Service"];
+            this.relationFK_TypeService_Service = this.Relations["FK_TypeService_Service"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -380,73 +380,30 @@ namespace lab1 {
             base.Tables.Add(this.tableBrand);
             this.tableCar = new CarDataTable();
             base.Tables.Add(this.tableCar);
-            global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_TypeService_Service", new global::System.Data.DataColumn[] {
-                        this.tableTypeService.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableService.TypeIdColumn});
-            this.tableService.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Worker_Service", new global::System.Data.DataColumn[] {
-                        this.tableWorker.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableService.WorkerIdColumn});
-            this.tableService.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Car_Service", new global::System.Data.DataColumn[] {
-                        this.tableCar.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableService.CarIdColumn});
-            this.tableService.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Brand_Model", new global::System.Data.DataColumn[] {
-                        this.tableBrand.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableModel.BrandIdColumn});
-            this.tableModel.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Model_Car", new global::System.Data.DataColumn[] {
-                        this.tableModel.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCar.ModelIdColumn});
-            this.tableCar.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("Client_Car", new global::System.Data.DataColumn[] {
-                        this.tableClient.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCar.ClientIdColumn});
-            this.tableCar.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_TypeService_Service = new global::System.Data.DataRelation("FK_TypeService_Service", new global::System.Data.DataColumn[] {
-                        this.tableTypeService.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableService.TypeIdColumn}, false);
-            this.Relations.Add(this.relationFK_TypeService_Service);
-            this.relationFK_Worker_Service = new global::System.Data.DataRelation("FK_Worker_Service", new global::System.Data.DataColumn[] {
-                        this.tableWorker.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableService.WorkerIdColumn}, false);
-            this.Relations.Add(this.relationFK_Worker_Service);
-            this.relationFK_Car_Service = new global::System.Data.DataRelation("FK_Car_Service", new global::System.Data.DataColumn[] {
-                        this.tableCar.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableService.CarIdColumn}, false);
-            this.Relations.Add(this.relationFK_Car_Service);
-            this.relationFK_Brand_Model = new global::System.Data.DataRelation("FK_Brand_Model", new global::System.Data.DataColumn[] {
-                        this.tableBrand.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableModel.BrandIdColumn}, false);
-            this.Relations.Add(this.relationFK_Brand_Model);
-            this.relationFK_Model_Car = new global::System.Data.DataRelation("FK_Model_Car", new global::System.Data.DataColumn[] {
-                        this.tableModel.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCar.ModelIdColumn}, false);
-            this.Relations.Add(this.relationFK_Model_Car);
             this.relationClient_Car = new global::System.Data.DataRelation("Client_Car", new global::System.Data.DataColumn[] {
                         this.tableClient.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableCar.ClientIdColumn}, false);
             this.Relations.Add(this.relationClient_Car);
+            this.relationFK_Car_Service = new global::System.Data.DataRelation("FK_Car_Service", new global::System.Data.DataColumn[] {
+                        this.tableCar.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableService.CarIdColumn}, false);
+            this.Relations.Add(this.relationFK_Car_Service);
+            this.relationFK_Model_Car = new global::System.Data.DataRelation("FK_Model_Car", new global::System.Data.DataColumn[] {
+                        this.tableModel.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCar.ModelIdColumn}, false);
+            this.Relations.Add(this.relationFK_Model_Car);
+            this.relationFK_Brand_Model = new global::System.Data.DataRelation("FK_Brand_Model", new global::System.Data.DataColumn[] {
+                        this.tableBrand.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableModel.BrandIdColumn}, false);
+            this.Relations.Add(this.relationFK_Brand_Model);
+            this.relationFK_Worker_Service = new global::System.Data.DataRelation("FK_Worker_Service", new global::System.Data.DataColumn[] {
+                        this.tableWorker.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableService.WorkerIdColumn}, false);
+            this.Relations.Add(this.relationFK_Worker_Service);
+            this.relationFK_TypeService_Service = new global::System.Data.DataRelation("FK_TypeService_Service", new global::System.Data.DataColumn[] {
+                        this.tableTypeService.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableService.TypeIdColumn}, false);
+            this.Relations.Add(this.relationFK_TypeService_Service);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3004,12 +2961,12 @@ namespace lab1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TypeServiceRow TypeServiceRow {
+            public CarRow CarRow {
                 get {
-                    return ((TypeServiceRow)(this.GetParentRow(this.Table.ParentRelations["FK_TypeService_Service"])));
+                    return ((CarRow)(this.GetParentRow(this.Table.ParentRelations["FK_Car_Service"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_TypeService_Service"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Car_Service"]);
                 }
             }
             
@@ -3026,12 +2983,12 @@ namespace lab1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CarRow CarRow {
+            public TypeServiceRow TypeServiceRow {
                 get {
-                    return ((CarRow)(this.GetParentRow(this.Table.ParentRelations["FK_Car_Service"])));
+                    return ((TypeServiceRow)(this.GetParentRow(this.Table.ParentRelations["FK_TypeService_Service"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Car_Service"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TypeService_Service"]);
                 }
             }
             
@@ -3433,23 +3390,23 @@ namespace lab1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ModelRow ModelRow {
-                get {
-                    return ((ModelRow)(this.GetParentRow(this.Table.ParentRelations["FK_Model_Car"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Model_Car"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ClientRow ClientRow {
                 get {
                     return ((ClientRow)(this.GetParentRow(this.Table.ParentRelations["Client_Car"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Client_Car"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelRow ModelRow {
+                get {
+                    return ((ModelRow)(this.GetParentRow(this.Table.ParentRelations["FK_Model_Car"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Model_Car"]);
                 }
             }
             

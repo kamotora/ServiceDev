@@ -1,4 +1,6 @@
-﻿namespace lab1
+﻿using System;
+
+namespace lab1
 {
     public class QueryBuilder
     {
@@ -50,7 +52,8 @@
         {
             Query += "UPDATE " +
                 tableName + " SET " + Joined(Equaled(columns));
-        
+            
+            Console.WriteLine(Query);
             return this;
         }
         public QueryBuilder Where(string column)

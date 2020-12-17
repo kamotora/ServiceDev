@@ -112,29 +112,15 @@
       <xs:selector xpath=".//mstns:Car" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
-    <xs:keyref name="FK_Model_Car" refer="Model_Constraint1" msprop:rel_Generator_UserChildTable="Car" msprop:rel_Generator_ChildPropName="GetCarRows" msprop:rel_Generator_UserRelationName="FK_Model_Car" msprop:rel_Generator_ParentPropName="ModelRow" msprop:rel_Generator_RelationVarName="relationFK_Model_Car" msprop:rel_Generator_UserParentTable="Model">
-      <xs:selector xpath=".//mstns:Car" />
-      <xs:field xpath="mstns:ModelId" />
-    </xs:keyref>
-    <xs:keyref name="Client_Car" refer="Constraint1" msprop:rel_Generator_UserChildTable="Car" msprop:rel_Generator_ChildPropName="GetCarRows" msprop:rel_Generator_UserRelationName="Client_Car" msprop:rel_Generator_ParentPropName="ClientRow" msprop:rel_Generator_RelationVarName="relationClient_Car" msprop:rel_Generator_UserParentTable="Client">
-      <xs:selector xpath=".//mstns:Car" />
-      <xs:field xpath="mstns:ClientId" />
-    </xs:keyref>
-    <xs:keyref name="FK_Brand_Model" refer="Brand_Constraint1" msprop:rel_Generator_UserChildTable="Model" msprop:rel_Generator_ChildPropName="GetModelRows" msprop:rel_Generator_UserRelationName="FK_Brand_Model" msprop:rel_Generator_RelationVarName="relationFK_Brand_Model" msprop:rel_Generator_UserParentTable="Brand" msprop:rel_Generator_ParentPropName="BrandRow">
-      <xs:selector xpath=".//mstns:Model" />
-      <xs:field xpath="mstns:BrandId" />
-    </xs:keyref>
-    <xs:keyref name="FK_TypeService_Service" refer="TypeService_Constraint1" msprop:rel_Generator_UserChildTable="Service" msprop:rel_Generator_ChildPropName="GetServiceRows" msprop:rel_Generator_UserRelationName="FK_TypeService_Service" msprop:rel_Generator_ParentPropName="TypeServiceRow" msprop:rel_Generator_RelationVarName="relationFK_TypeService_Service" msprop:rel_Generator_UserParentTable="TypeService">
-      <xs:selector xpath=".//mstns:Service" />
-      <xs:field xpath="mstns:TypeId" />
-    </xs:keyref>
-    <xs:keyref name="FK_Worker_Service" refer="Worker_Constraint1" msprop:rel_Generator_UserChildTable="Service" msprop:rel_Generator_ChildPropName="GetServiceRows" msprop:rel_Generator_UserRelationName="FK_Worker_Service" msprop:rel_Generator_RelationVarName="relationFK_Worker_Service" msprop:rel_Generator_UserParentTable="Worker" msprop:rel_Generator_ParentPropName="WorkerRow">
-      <xs:selector xpath=".//mstns:Service" />
-      <xs:field xpath="mstns:WorkerId" />
-    </xs:keyref>
-    <xs:keyref name="FK_Car_Service" refer="Car_Constraint1" msprop:rel_Generator_UserChildTable="Service" msprop:rel_Generator_ChildPropName="GetServiceRows" msprop:rel_Generator_UserRelationName="FK_Car_Service" msprop:rel_Generator_RelationVarName="relationFK_Car_Service" msprop:rel_Generator_UserParentTable="Car" msprop:rel_Generator_ParentPropName="CarRow">
-      <xs:selector xpath=".//mstns:Service" />
-      <xs:field xpath="mstns:CarId" />
-    </xs:keyref>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Client_Car" msdata:parent="Client" msdata:child="Car" msdata:parentkey="Id" msdata:childkey="ClientId" msprop:Generator_UserChildTable="Car" msprop:Generator_ChildPropName="GetCarRows" msprop:Generator_UserRelationName="Client_Car" msprop:Generator_ParentPropName="ClientRow" msprop:Generator_RelationVarName="relationClient_Car" msprop:Generator_UserParentTable="Client" />
+      <msdata:Relationship name="FK_Car_Service" msdata:parent="Car" msdata:child="Service" msdata:parentkey="Id" msdata:childkey="CarId" msprop:Generator_UserChildTable="Service" msprop:Generator_ChildPropName="GetServiceRows" msprop:Generator_UserRelationName="FK_Car_Service" msprop:Generator_RelationVarName="relationFK_Car_Service" msprop:Generator_UserParentTable="Car" msprop:Generator_ParentPropName="CarRow" />
+      <msdata:Relationship name="FK_Model_Car" msdata:parent="Model" msdata:child="Car" msdata:parentkey="Id" msdata:childkey="ModelId" msprop:Generator_UserChildTable="Car" msprop:Generator_ChildPropName="GetCarRows" msprop:Generator_UserRelationName="FK_Model_Car" msprop:Generator_ParentPropName="ModelRow" msprop:Generator_RelationVarName="relationFK_Model_Car" msprop:Generator_UserParentTable="Model" />
+      <msdata:Relationship name="FK_Brand_Model" msdata:parent="Brand" msdata:child="Model" msdata:parentkey="Id" msdata:childkey="BrandId" msprop:Generator_UserChildTable="Model" msprop:Generator_ChildPropName="GetModelRows" msprop:Generator_UserRelationName="FK_Brand_Model" msprop:Generator_RelationVarName="relationFK_Brand_Model" msprop:Generator_UserParentTable="Brand" msprop:Generator_ParentPropName="BrandRow" />
+      <msdata:Relationship name="FK_Worker_Service" msdata:parent="Worker" msdata:child="Service" msdata:parentkey="Id" msdata:childkey="WorkerId" msprop:Generator_UserChildTable="Service" msprop:Generator_ChildPropName="GetServiceRows" msprop:Generator_UserRelationName="FK_Worker_Service" msprop:Generator_RelationVarName="relationFK_Worker_Service" msprop:Generator_UserParentTable="Worker" msprop:Generator_ParentPropName="WorkerRow" />
+      <msdata:Relationship name="FK_TypeService_Service" msdata:parent="TypeService" msdata:child="Service" msdata:parentkey="Id" msdata:childkey="TypeId" msprop:Generator_UserChildTable="Service" msprop:Generator_ChildPropName="GetServiceRows" msprop:Generator_UserRelationName="FK_TypeService_Service" msprop:Generator_ParentPropName="TypeServiceRow" msprop:Generator_RelationVarName="relationFK_TypeService_Service" msprop:Generator_UserParentTable="TypeService" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>
