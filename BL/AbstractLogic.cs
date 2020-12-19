@@ -21,10 +21,10 @@ namespace BL
 
         protected abstract AbstractDataAccessor CreateAccessor();
 
-        public ICollection<T> FindAll()
+        public List<T> FindAll()
         {
             ReadInTransaction();
-            return GetTable().Select().Select(row => row as T).ToList();
+            return Filter();
         }
 
         protected TypedTableBase<T> GetTable()
@@ -43,7 +43,7 @@ namespace BL
                 ReadInTransaction();
                 var dataRow = GetTable().Rows.Find(id) as T;
                 if(dataRow == null)
-                    throw new SystemException($"Not foundin table {Accessor.TableName} by id = {id}");
+                    throw new SystemException($"Not found in table {Accessor.TableName} by id = {id}");
                 return dataRow;
             }
             catch (Exception e)
@@ -52,12 +52,26 @@ namespace BL
             }
         }
         
+        public void ThrowIfNotExist(long id)
+        {
+            ReadInTransaction();
+            if(!GetTable().Rows.Contains(id))
+                throw new SystemException($"ERROR! Not exists row in table {Accessor.TableName} by id = {id}");
+        }
+        
+        public void ThrowIfNotExist(string id)
+        {
+            var idOrNull = ParseIdOrNull(id);
+            if(idOrNull.HasValue && !GetTable().Rows.Contains(idOrNull.Value))
+                throw new SystemException($"ERROR! Not exists row in table {Accessor.TableName} by id = {id}");
+        }
+        
         public T FindByLastId()
         {
             try
             {
                 ReadInTransaction();
-                return GetTable().Select(null, "Id DESC").Select(row => (T) row).First();
+                return Filter(null, "Id DESC").First();
             }
             catch (Exception e)
             {
@@ -77,17 +91,9 @@ namespace BL
             return FindByIdOrThrow(id);
         }
         
-        public T UpdateExisting(T row)
+        protected internal T FindByIdIfIdNotNull(string id)
         {
-            UpdateInTransaction();
-            return FindByIdOrThrow((long) row[Accessor.Id]);
-        }
-        
-        public T Save(T row)
-        {
-            if (row.IsNull(Accessor.Id))
-                return Add(row);
-            return UpdateExisting(row);
+            return !string.IsNullOrWhiteSpace(id) ? FindByIdOrThrow(long.Parse(id)) : null;
         }
         
         public bool DeleteById(long id)
@@ -97,18 +103,11 @@ namespace BL
             return true;
         }
 
-        public bool Delete(T row)
-        {
-            row.Delete();
-            UpdateInTransaction();
-            return true;
-        }
-        
         public T Add(T row)
         {
             GetTable().Rows.Add(row);
             UpdateInTransaction();
-            return row;
+            return FindByLastId();
         }
 
         protected void ReadInTransaction()
@@ -151,6 +150,43 @@ namespace BL
                 Console.Error.WriteLine(e.Message);
                 throw;
             }
+        }
+
+        public string AddFilter(string id, string value, string filter = "", string oper = "=")
+        {
+            if (!string.IsNullOrWhiteSpace(value)){
+                if (!string.IsNullOrWhiteSpace(filter))
+                    filter += " and ";
+                filter += $"{id} {oper} '{value}'";
+            }
+            return filter;
+        }
+        
+        public string AddFilter(string id, long? value = null, string filter = "", string oper = "=")
+        {
+            if (value != null){
+                if (!string.IsNullOrWhiteSpace(filter))
+                    filter += " and ";
+                filter += $"{id} {oper} {value}";
+            }
+            return filter;
+        }
+
+        protected List<T> Filter(string filter = null, string sort = null)
+        {
+            return GetTable().Select(filter, sort).Select(row => (T) row).ToList();
+        }
+        
+        protected List<DataRow> FilterNotCast(string filter = null, string sort = null)
+        {
+            return GetTable().Select(filter, sort).ToList();
+        }
+
+        public long? ParseIdOrNull(string id)
+        {
+            if (String.IsNullOrWhiteSpace(id))
+                return null;
+            return long.Parse(id);
         }
     }
 }

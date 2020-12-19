@@ -39,7 +39,7 @@ namespace lab1
 
             adapter.Fill(ds, TableName);
             Console.WriteLine("\nRead " + TableName);
-            Helper.PrintDataSet(ds, TableName);
+            // Helper.PrintDataSet(ds, TableName);
         }
 
 
@@ -72,12 +72,12 @@ namespace lab1
                 (MySqlTransaction) transaction.GetTransaction());
             bindParams(adapter.DeleteCommand.Parameters, Id);
 
-            Helper.Console(sqlSelect, sqlInsert, sqlUpdate, sqlDelete);
+            // Helper.Console(sqlSelect, sqlInsert, sqlUpdate, sqlDelete);
             // Updating
             MySqlCommandBuilder mySqlCommandBuilder = new MySqlCommandBuilder(adapter);
             adapter.Update(ds, TableName);
             Console.WriteLine("\nUpdate " + TableName);
-            Helper.PrintDataSet(ds, TableName);
+            // Helper.PrintDataSet(ds, TableName);
         }
     }
 }
