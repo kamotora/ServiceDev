@@ -58,13 +58,14 @@ namespace DATests
             Assert.AreEqual(1, typeRows.Count);
             
             // Проверим, что такой авто есть
-            DoInTransaction(typeAccessor.Read, dataSet1);
+            DoInTransaction(carAccessor.Read, dataSet1);
             var carRows = Select($"Id = '{carId}'", dataSet1.Car);
-            Assert.AreEqual(1, typeRows.Count);
+            Assert.AreEqual(1, carRows.Count);
             
             // Читаем существующие, с таким именем не должно быть
             DoInTransaction(serviceAccessor.Read, dataSet1);
-            var dataRows = Select(dataSet1, $"Name = '{newName}' and CarId = '{carId}'");
+            var dataRows = Select(dataSet1, 
+                $"Name = '{newName}' and CarId = '{carId}' and TypeId = '{typeId}' and WorkerId = '{workerId}'");
             Assert.AreEqual(0, dataRows.Count);
             // Добавим и проверим
             var newRow = dataSet1.Service.NewServiceRow();
@@ -78,7 +79,8 @@ namespace DATests
             DoInTransaction(serviceAccessor.Update, dataSet1);
             dataSet1 = new DataSet1();
             DoInTransaction(serviceAccessor.Read, dataSet1);
-            var list = Select(dataSet1, $"Name = '{newName}' and CarId = '{carId}'");
+            var list = Select(dataSet1, 
+                $"Name = '{newName}' and CarId = '{carId}' and TypeId = '{typeId}' and WorkerId = '{workerId}'");
             Assert.AreEqual(1, list.Count);
             CheckRow(list.First(), newName, carId, workerId, typeId, amount);
             
@@ -86,7 +88,8 @@ namespace DATests
             list.First().Delete();
             DoInTransaction(serviceAccessor.Update, dataSet1);
             DoInTransaction(serviceAccessor.Read, dataSet1);
-            dataRows = Select(dataSet1, $"Name = '{newName}' and CarId = '{carId}'");
+            dataRows = Select(dataSet1, 
+                $"Name = '{newName}' and CarId = '{carId}' and TypeId = '{typeId}' and WorkerId = '{workerId}'");
             Assert.AreEqual(0, dataRows.Count);
         }
 

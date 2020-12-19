@@ -39,7 +39,7 @@ namespace DATests
 
 
         [TestCase("Corolla Spacio", 13)]
-        public void AddNewTypeServiceAndDeleteThemTest(String newName, Int64 brandId)
+        public void AddNewModelAndDeleteThemTest(String newName, Int64 brandId)
         {
             var modelAccessor = new ModelAccessor();
             var brandAccessor = new BrandAccessor();
@@ -53,7 +53,7 @@ namespace DATests
             
             // Читаем существующие, с таким именем не должно быть
             DoInTransaction(modelAccessor.Read, dataSet1);
-            var dataRows = Select(dataSet1, $"Name = '{newName}'");
+            var dataRows = Select(dataSet1, $"Name = '{newName}' and BrandId = {brandId}");
             Assert.AreEqual(0, dataRows.Count);
             // Добавим и проверим
             var newRow = dataSet1.Model.NewModelRow();
@@ -63,7 +63,7 @@ namespace DATests
             DoInTransaction(modelAccessor.Update, dataSet1);
             dataSet1 = new DataSet1();
             DoInTransaction(modelAccessor.Read, dataSet1);
-            var list = Select(dataSet1, $"Name = '{newName}'");
+            var list = Select(dataSet1, $"Name = '{newName}' and BrandId = {brandId}");
             Assert.AreEqual(1, list.Count);
             Assert.AreEqual(newName, list[0].Name);
 
@@ -71,7 +71,7 @@ namespace DATests
             list.First().Delete();
             DoInTransaction(modelAccessor.Update, dataSet1);
             DoInTransaction(modelAccessor.Read, dataSet1);
-            dataRows = Select(dataSet1, $"Name = '{newName}'");
+            dataRows = Select(dataSet1, $"Name = '{newName}' and BrandId = {brandId}");
             Assert.AreEqual(0, dataRows.Count);
         }
 
@@ -93,7 +93,6 @@ namespace DATests
         
         public override List<DataSet1.ModelRow> Select(DataSet1 dataSet1, String filter)
         {
-            var brandRows = Select(null, dataSet1.Brand);
             return Select(filter, dataSet1.Model);
         }
     }

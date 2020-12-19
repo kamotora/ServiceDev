@@ -38,7 +38,7 @@ namespace DATests
 
 
         [TestCase("Новая тачка", 15, 11)]
-        public void AddNewTypeServiceAndDeleteThemTest(String newName, Int64 modelId, Int64 clientId)
+        public void AddNewCarAndDeleteThemTest(String newName, Int64 modelId, Int64 clientId)
         {
             var modelAccessor = new ModelAccessor();
             var clientAccessor = new ClientAccessor();
@@ -55,9 +55,10 @@ namespace DATests
             var clientRows = Select($"Id = '{clientId}'", dataSet1.Model);
             Assert.AreEqual(1, clientRows.Count);
             
-            // Читаем существующие, с таким именем не должно быть
+            // Читаем существующие, с такими параметрами быть не должно
             DoInTransaction(carAccessor.Read, dataSet1);
-            var dataRows = Select(dataSet1, $"Name = '{newName}'");
+            var dataRows = Select(dataSet1,
+                $"Name = '{newName}' and ModelId = '{modelId}' and ClientId = {clientId}");
             Assert.AreEqual(0, dataRows.Count);
             // Добавим и проверим
             var newRow = dataSet1.Car.NewCarRow();

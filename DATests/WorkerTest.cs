@@ -46,7 +46,8 @@ namespace DATests
             
             // Читаем существующие, с такими данными не должно быть
             DoInTransaction(workerAccessor.Read, dataSet1);
-            var dataRows = Select(dataSet1, $"LastName = '{surname}' and Phone = '{phone}'");
+            var dataRows = Select(dataSet1, 
+                $"LastName = '{surname}' and FirstName = '{name}' and MiddleName = '{middlename}' and Phone = '{phone}'");
             Assert.AreEqual(0, dataRows.Count);
             // Добавим и проверим
             var newRow = dataSet1.Worker.NewWorkerRow();
@@ -58,7 +59,8 @@ namespace DATests
             DoInTransaction(workerAccessor.Update, dataSet1);
             dataSet1 = new DataSet1();
             DoInTransaction(workerAccessor.Read, dataSet1);
-            var list = Select(dataSet1, $"LastName = '{surname}' and Phone = '{phone}'");
+            var list = Select(dataSet1, 
+                $"LastName = '{surname}' and FirstName = '{name}' and MiddleName = '{middlename}' and Phone = '{phone}'");
             Assert.AreEqual(1, list.Count);
             CheckRow(list.First(), surname, name, middlename, phone);
             
@@ -66,7 +68,8 @@ namespace DATests
             list.First().Delete();
             DoInTransaction(workerAccessor.Update, dataSet1);
             DoInTransaction(workerAccessor.Read, dataSet1);
-            dataRows =  Select(dataSet1, $"LastName = '{surname}' and Phone = '{phone}'");
+            dataRows =  Select(dataSet1, 
+                $"LastName = '{surname}' and FirstName = '{name}' and MiddleName = '{middlename}' and Phone = '{phone}'");
             Assert.AreEqual(0, dataRows.Count);
         }
        
