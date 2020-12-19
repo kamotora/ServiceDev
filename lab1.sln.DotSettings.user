@@ -2,20 +2,8 @@
 	<s:Int64 x:Key="/Default/Environment/Hierarchy/Build/BuildTool/MsbuildVersion/@EntryValue">1048576</s:Int64>
 	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">D:\JetBrains\apps\Rider\ch-0\202.7660.16\tools\MSBuild\Current\Bin\MSBuild.exe</s:String>
 	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\honor\AppData\Local\JetBrains\Rider2020.3\resharper-host\temp\Rider\vAny\CoverageData\_lab1.1885743675\Snapshot\snapshot.utdcvr</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a93754a0_002D7ffc_002D42c2_002Db3fe_002De77287a6ccde/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="FindByIdTest(55)" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.ModelTest.FindByIdTest(55)&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.TypeServiceTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.BrandTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.ModelTest.GetAll&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.ModelTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.CarTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.ServiceTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.WorkerTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.ClientTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f2a7a4e9_002D4753_002D4f4d_002Da905_002D6ca786e32988/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f2a7a4e9_002D4753_002D4f4d_002Da905_002D6ca786e32988/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.Tests.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.BrandTest.GetAll&lt;/TestId&gt;&#xD;
@@ -29,5 +17,9 @@
     &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.BrandTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.TypeServiceTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::5D3117F9-C891-40B1-B586-F606A8ABD5A8::.NETFramework,Version=v4.7.2::DATests.ModelTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::457DBB13-1CD3-454D-8E7B-B4D1F6A4A149::.NETFramework,Version=v4.7.2::DLTests.CrudLogicTest.AddAndUpdateAndDeleteTest(1,"updated")&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	
+	
+	</wpf:ResourceDictionary>
